@@ -3,8 +3,9 @@
 namespace Pharaoh\Paytool;
 
 use Illuminate\Foundation\AliasLoader;
+use Illuminate\Support\ServiceProvider;
 
-class PaytoolServiceProvider
+class PaytoolServiceProvider extends ServiceProvider
 {
     public function boot()
     {

@@ -1,5 +1,7 @@
 <?php
 
+namespace Pharaoh\Paytool\Tests;
+
 use Orchestra\Testbench\TestCase;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Faker\Factory as FakerFactory;
