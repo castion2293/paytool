@@ -1,0 +1,39 @@
+{
+    "name": "thoth-pharaoh/paytool",
+    "description": "第三方支付工具",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nick",
+            "email": "nick@ifalo.com.tw"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^8.6"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pharaoh\\Paytool\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pharaoh\\Paytool\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pharaoh\\Paytool\\PaytoolServiceProvider"
+            ],
+            "aliases": {
+                "Paytool": "Pharaoh\\Paytool\\Facades\\Paytool"
+            }
+        }
+    }
+}

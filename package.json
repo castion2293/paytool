@@ -1,0 +1,23 @@
+{
+  "name": "logger",
+  "description": "第三方支付工具",
+  "main": "index.js",
+  "version": "0.0.0",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "release": "standard-version"
+  },
+  "author": "Nick",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "standard-version": "^9.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "php-cs-fixer fix . && git add ."
+    }
+  }
+}
