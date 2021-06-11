@@ -2,7 +2,7 @@
   "name": "logger",
   "description": "第三方支付工具",
   "main": "index.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "directories": {
     "test": "tests"
   },

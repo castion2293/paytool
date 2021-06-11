@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/castion2293/paytool/compare/v0.0.3...v0.0.4) (2021-06-11)
+
+
+### Bug Fixes
+
+* 增加tempUrl參數帶入([@nick](https://github.com/nick)) ([f5b1e09](https://github.com/castion2293/paytool/commit/f5b1e099aaea74ee3f3910d67f648868411cb109))
+
 ### [0.0.3](https://github.com/castion2293/paytool/compare/v0.0.2...v0.0.3) (2021-06-10)
 
 
