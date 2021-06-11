@@ -6,6 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Pharaoh\Paytool\Exceptions\PaytoolException;
 use Pharaoh\Paytool\Rules\DriverExistsRule;
+use Pharaoh\Paytool\Rules\PaymentExistsRule;
 
 class OrderCreateRequest extends FormRequest
 {
@@ -27,7 +28,12 @@ class OrderCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'driver' => ['required', new DriverExistsRule()]
+            'driver' => ['bail', 'required', new DriverExistsRule()],
+            'choose_payment' => ['bail', 'required', new PaymentExistsRule($this->input('driver'))],
+            'merchant_trade_date' => ['required', 'date_format:Y/m/d H:i:s'],
+            'merchant_trade_no' => ['required'],
+            'total_amount' => ['required', 'numeric'],
+            'trade_desc' => ['required']
         ];
     }
 
