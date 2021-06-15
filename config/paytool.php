@@ -4,7 +4,7 @@ return [
     'driver' => [
         'ec_pay' => [
             //服務位置
-            'service_url' => env('SERVICE_URL', 'https://payment-stage.ecpay.com.tw/Cashier/QueryTradeInfo/V5'),
+            'service_url' => env('SERVICE_URL', 'https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5'),
             // HashKey
             'hash_key' => env('HASH_KEY', '5294y06JbISpM5x9'),
             // HashIV

@@ -22,7 +22,6 @@ class PaytoolTest extends BaseTestCase
 
         $params = [
             'merchant_trade_no' => Str::random(2) . time(),
-            'merchant_trade_date' => date('Y/m/d H:i:s'),
             'total_amount' => 2000,
             'trade_desc' => '交易描述',
             'choose_payment' => 'Credit',

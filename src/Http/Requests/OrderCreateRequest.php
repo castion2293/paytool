@@ -30,7 +30,6 @@ class OrderCreateRequest extends FormRequest
         return [
             'driver' => ['bail', 'required', new DriverExistsRule()],
             'choose_payment' => ['bail', 'required', new PaymentExistsRule($this->input('driver'))],
-            'merchant_trade_date' => ['required', 'date_format:Y/m/d H:i:s'],
             'merchant_trade_no' => ['required'],
             'total_amount' => ['required', 'numeric'],
             'trade_desc' => ['required']
