@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/castion2293/paytool/compare/v0.0.4...v0.0.5) (2021-06-15)
+
+
+### Bug Fixes
+
+* 增加綠界信用卡支付功能([@nick](https://github.com/nick)) ([6e84e4c](https://github.com/castion2293/paytool/commit/6e84e4cafc4018707e07a8f1c018b5560dc79b39))
+
 ### [0.0.4](https://github.com/castion2293/paytool/compare/v0.0.3...v0.0.4) (2021-06-11)
 
 
