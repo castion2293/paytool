@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/castion2293/paytool/compare/v0.0.5...v0.0.6) (2021-06-16)
+
+
+### Bug Fixes
+
+* 增加所以付款方式([@nick](https://github.com/nick)) ([a5db5a2](https://github.com/castion2293/paytool/commit/a5db5a2256b591ea73b05d3e26785b20f8a74fc1))
+
 ### [0.0.5](https://github.com/castion2293/paytool/compare/v0.0.4...v0.0.5) (2021-06-15)
 
 
