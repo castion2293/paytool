@@ -4,17 +4,17 @@ return [
     'driver' => [
         'ec_pay' => [
             //服務位置
-            'service_url' => env('SERVICE_URL', 'https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5'),
+            'service_url' => env('EC_PAY_SERVICE_URL', 'https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5'),
             // HashKey
-            'hash_key' => env('HASH_KEY', '5294y06JbISpM5x9'),
+            'hash_key' => env('EC_PAY_HASH_KEY', '5294y06JbISpM5x9'),
             // HashIV
-            'hash_iv' => env('HASH_IV', 'v77hoKGq4kWxNNIS'),
+            'hash_iv' => env('EC_PAY_HASH_IV', 'v77hoKGq4kWxNNIS'),
             // 特店編號
-            'merchant_id' => env('MERCHANT_ID', '2000132'),
+            'merchant_id' => env('EC_PAY_MERCHANT_ID', '2000132'),
             // CheckMacValue加密類型
             'encrypt_type' => '1',
             // Client 端回 傳付款相關 資訊
-            'client_redirect_url' => env('ClientRedirectURL', ''),
+            'client_redirect_url' => env('EC_PAY_ClientRedirectURL', ''),
             // 付款類型
             'type' => [
                 // 信用卡

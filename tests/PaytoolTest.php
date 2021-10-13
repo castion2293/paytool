@@ -14,6 +14,8 @@ class PaytoolTest extends BaseTestCase
 
     /**
      * 測試 建立訂單跳轉URL
+     *
+     * @see \Pharaoh\Paytool\Paytool::createOrderTempUrl
      */
     public function testCreateOrderTempUrl()
     {

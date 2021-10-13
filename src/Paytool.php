@@ -3,9 +3,11 @@
 namespace Pharaoh\Paytool;
 
 use Illuminate\Routing\Middleware\ValidateSignature;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
+use Orchestra\Testbench\Http\Middleware\TrustProxies;
 use Pharaoh\Paytool\Exceptions\PaytoolException;
 use Pharaoh\Paytool\Http\Controllers\OrderController;
 
@@ -38,7 +40,7 @@ class Paytool
     }
 
     /**
-     * 註冊Log路由
+     * 註冊金流相關路由
      */
     public function routes()
     {
@@ -50,10 +52,14 @@ class Paytool
                     ->middleware(ValidateSignature::class);
 
                 // 付款確認回戳
-                Route::post('pay-notice', []);
+                Route::post('pay-notice', [OrderController::class, 'payNotice'])
+                    ->name('pay-notice');
 
                 // 付款資訊回戳
-                Route::post('pay-information', []);
+                Route::post('pay-information', function () {
+                    Log::info('pay-information');
+                    Log::info(json_encode(request()->all()));
+                });
             }
         );
     }

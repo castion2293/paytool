@@ -38,7 +38,7 @@ class EcPayDriver extends AbstractDriver
             $this->obj->EncryptType = Arr::get($this->settings, 'encrypt_type');
 
             //基本參數(請依系統規劃自行調整)
-            $this->obj->Send['ReturnURL'] = config('app.url') . '/pay-notice';
+            $this->obj->Send['ReturnURL'] = config('app.url') . '/paytool/pay-notice';
             $this->obj->Send['MerchantTradeNo'] = Arr::get($params, 'merchant_trade_no');
             $this->obj->Send['MerchantTradeDate'] = date('Y/m/d H:i:s');
             $this->obj->Send['TotalAmount'] = Arr::get($params, 'total_amount');
@@ -104,7 +104,7 @@ class EcPayDriver extends AbstractDriver
         $atmType = Arr::get($this->settings, 'type.ATM');
 
         $this->obj->SendExtend['ExpireDate'] = Arr::get($atmType, 'expire_date');
-        $this->obj->SendExtend['PaymentInfoURL'] = config('app.url') . '/pay-information';
+        $this->obj->SendExtend['PaymentInfoURL'] = config('app.url') . '/paytool/pay-information';
     }
 
     /**
@@ -122,7 +122,7 @@ class EcPayDriver extends AbstractDriver
         $this->obj->SendExtend['Desc_2'] = Arr::get($params, 'desc_2', '');
         $this->obj->SendExtend['Desc_3'] = Arr::get($params, 'desc_3', '');
         $this->obj->SendExtend['Desc_4'] = Arr::get($params, 'desc_4', '');
-        $this->obj->SendExtend['PaymentInfoURL'] = config('app.url') . '/pay-information';
+        $this->obj->SendExtend['PaymentInfoURL'] = config('app.url') . '/paytool/pay-information';
         $this->obj->SendExtend['ClientRedirectURL'] = Arr::get($this->settings, 'client_redirect_url');
         $this->obj->SendExtend['StoreExpireDate'] = Arr::get($cvsType, 'store_expire_date');
     }
@@ -137,7 +137,7 @@ class EcPayDriver extends AbstractDriver
         $this->obj->SendExtend['Desc_2'] = Arr::get($params, 'desc_2', '');
         $this->obj->SendExtend['Desc_3'] = Arr::get($params, 'desc_3', '');
         $this->obj->SendExtend['Desc_4'] = Arr::get($params, 'desc_4', '');
-        $this->obj->SendExtend['PaymentInfoURL'] = config('app.url') . '/pay-information';
+        $this->obj->SendExtend['PaymentInfoURL'] = config('app.url') . '/paytool/pay-information';
         $this->obj->SendExtend['ClientRedirectURL'] = Arr::get($this->settings, 'client_redirect_url');
         $this->obj->SendExtend['StoreExpireDate'] = Arr::get($barcodeType, 'store_expire_date');
     }
