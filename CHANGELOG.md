@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/castion2293/paytool/compare/v0.0.6...v1.0.0) (2021-10-13)
+
+
+### Features
+
+* 完成綠界串接([@nick](https://github.com/nick)) ([7b9497e](https://github.com/castion2293/paytool/commit/7b9497e6319a5d1bee9c2653c08715b6ff4b844a))
+
 ### [0.0.6](https://github.com/castion2293/paytool/compare/v0.0.5...v0.0.6) (2021-06-16)
 
 
