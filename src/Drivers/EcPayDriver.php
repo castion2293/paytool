@@ -43,7 +43,7 @@ class EcPayDriver extends AbstractDriver
             $this->obj->Send['MerchantTradeDate'] = date('Y/m/d H:i:s');
             $this->obj->Send['TotalAmount'] = Arr::get($params, 'total_amount');
             $this->obj->Send['TradeDesc'] = Arr::get($params, 'trade_desc');
-            $this->obj->Send['ChoosePayment'] = $choosePayment =Arr::get($params, 'choose_payment');
+            $this->obj->Send['ChoosePayment'] = $choosePayment = Arr::get($params, 'choose_payment');
 
             //訂單的商品資料
             array_push(

@@ -13,7 +13,19 @@ use Pharaoh\Paytool\Http\Controllers\OrderController;
 
 class Paytool
 {
+    /**
+     * 支付工具
+     *
+     * @var
+     */
     private $driver;
+
+    /**
+     * 支付工具代碼
+     *
+     * @var string
+     */
+    private string $driverCode;
 
     public function __construct()
     {
@@ -34,6 +46,7 @@ class Paytool
         }
 
         // 設定 paytool driver
+        $this->driverCode = $driver;
         $this->driver = \App::make('Pharaoh\\Paytool\\Drivers\\' . Str::studly($driver) . 'Driver');
 
         return $this;
@@ -75,7 +88,8 @@ class Paytool
         $params = array_merge(
             $params,
             [
-                'driver' => $this->driver::class
+                'driver' => $this->driver::class,
+                'driver_code' => $this->driverCode
             ]
         );
 

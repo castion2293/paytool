@@ -11,6 +11,8 @@ class PaytoolServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/paytool.php', 'paytool');
 
+        $this->loadViewsFrom(__DIR__ . '/Views', 'pharaoh_paytool');
+
         $this->publishes(
             [
                 __DIR__ . '/../config/paytool.php' => config_path('paytool.php')

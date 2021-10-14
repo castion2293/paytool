@@ -49,5 +49,32 @@ return [
                 ],
             ],
         ],
+        'neweb_pay' => [
+            //服務位置
+            'service_url' => env('NEWEB_PAY_SERVICE_URL', 'https://ccore.newebpay.com/MPG/mpg_gateway'),
+            // 商店代號
+            'merchant_id' => env('NEWEB_PAY_MERCHANT_ID'),
+            // HashKey
+            'hash_key' => env('NEWEB_PAY_HASH_KEY'),
+            // HashIV
+            'hash_iv' => env('NEWEB_PAY_HASH_IV'),
+            // 版本號
+            'version' => env('NEWEB_PAY_VERSION', '1.6'),
+            // 藍新金流會員
+            'login_type' => env('NEWEB_PAY_LOGIN_TYPE', 0),
+            // 付款類型
+            'type' => [
+                // 超商代碼
+                'CVS' => [
+                    // 繳費有效天數
+                    'expire_days' => 7,
+                ],
+
+                // 自動櫃員機
+                'ATM' => [
+
+                ],
+            ]
+        ]
     ]
 ];

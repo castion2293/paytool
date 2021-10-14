@@ -6,7 +6,13 @@
 composer require thoth-pharaoh/paytool
 ```
 
-添加 .env 支付工具必要環境參數
+## 匯出 Config
+```bash
+php artisan vendor:publish --tag=paytoo-config --force
+```
+
+
+## 添加 .env 支付工具必要環境參數
 ```bash
 # ------------------
 #  綠界
@@ -67,8 +73,5 @@ class EventServiceProvider extends ServiceProvider
 }
 ```
 付款成功處理任務請在專案中的 PayNoticeListener 實作
-
-
-##### <a name="ec_pay">綠界-金流支費相關資料</a>
 
 
