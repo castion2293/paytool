@@ -64,15 +64,37 @@ return [
             'login_type' => env('NEWEB_PAY_LOGIN_TYPE', 0),
             // 付款類型
             'type' => [
+                // 信用卡
+                'Credit' => [
+                    // 分期功能，預設 不啟用
+                    'credit_installment_enable' => 0,
+                    // 是否使用紅利折抵，預設 不啟用
+                    'redeem' => 0,
+                    // 是否為聯營卡，預設 不啟用
+                    'union_pay' => 0,
+                ],
+
                 // 超商代碼
                 'CVS' => [
                     // 繳費有效天數
                     'expire_days' => 7,
                 ],
 
+                // 超商條碼
+                'BARCODE' => [
+                    // 超商條碼 截止時間 以天為單位
+                    'expire_days' => 1
+                ],
+
                 // 自動櫃員機
                 'ATM' => [
+                    // 繳費有效天數
+                    'expire_days' => 7
+                ],
 
+                'WebATM' => [
+                    // 繳費有效天數
+                    'expire_days' => 7
                 ],
             ]
         ]

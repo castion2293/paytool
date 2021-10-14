@@ -127,6 +127,11 @@ class EcPayDriver extends AbstractDriver
         $this->obj->SendExtend['StoreExpireDate'] = Arr::get($cvsType, 'store_expire_date');
     }
 
+    /**
+     * 超商條碼付款的專屬參數
+     *
+     * @param array $params
+     */
     private function barcodeType(array $params)
     {
         // BARCODE超商條碼延伸參數(可依系統需求選擇是否代入)

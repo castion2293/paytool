@@ -61,8 +61,52 @@ class NewebPayDriver extends AbstractDriver
      */
     private function cvsType(array &$params)
     {
-        $params['ExpireDate'] = now()->addDays(Arr::get($this->settings, 'CVS.expire_days'))->format('Ymd');
+        $params['ExpireDate'] = now()->addDays(Arr::get($this->settings, 'type.CVS.expire_days'))->format('Ymd');
         $params['CVS'] = 1;
+    }
+
+    /**
+     * 自動櫃員機付款的專屬參數
+     *
+     * @param array $params
+     */
+    private function atmType(array &$params)
+    {
+        $params['ExpireDate'] = now()->addDays(Arr::get($this->settings, 'type.ATM.expire_days'))->format('Ymd');
+        $params['VACC'] = 1;
+    }
+
+    /**
+     * 網路櫃員機付款的專屬參數
+     *
+     * @param array $params
+     */
+    private function webatmType(array &$params)
+    {
+        $params['ExpireDate'] = now()->addDays(Arr::get($this->settings, 'type.WebATM.expire_days'))->format('Ymd');
+        $params['WEBATM'] = 1;
+    }
+
+    /**
+     * 超商條碼付款的專屬參數
+     *
+     * @param array $params
+     */
+    private function barcodeType(array &$params)
+    {
+        $params['ExpireDate'] = now()->addDays(Arr::get($this->settings, 'type.BARCODE.expire_days'))->format('Ymd');
+        $params['BARCODE'] = 1;
+    }
+
+    private function creditType(array &$params)
+    {
+        // 信用卡 分期付款
+        $params['InstFlag'] = Arr::get($this->settings, 'type.Credit.credit_installment_enable');
+        // 信用卡 紅利
+        $params['CreditRed'] = Arr::get($this->settings, 'type.Credit.redeem');
+        // 信用卡 銀聯卡
+        $params['UNIONPAY'] = Arr::get($this->settings, 'type.Credit.union_pay');
+        $params['CREDIT'] = 1;
     }
 
     /**
