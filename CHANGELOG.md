@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/castion2293/paytool/compare/v1.0.0...v1.0.1) (2021-10-14)
+
+
+### Bug Fixes
+
+* 新增藍新金流CVS([@nick](https://github.com/nick)) ([8128b2e](https://github.com/castion2293/paytool/commit/8128b2ec3ef1dd6a8643719256fcf4204be7906e))
+
 ## [1.0.0](https://github.com/castion2293/paytool/compare/v0.0.6...v1.0.0) (2021-10-13)
 
 
