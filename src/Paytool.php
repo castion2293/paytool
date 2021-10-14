@@ -25,7 +25,7 @@ class Paytool
      *
      * @var string
      */
-    private string $driverCode;
+    private string $vendorCode;
 
     public function __construct()
     {
@@ -46,7 +46,7 @@ class Paytool
         }
 
         // 設定 paytool driver
-        $this->driverCode = $driver;
+        $this->vendorCode = $driver;
         $this->driver = \App::make('Pharaoh\\Paytool\\Drivers\\' . Str::studly($driver) . 'Driver');
 
         return $this;
@@ -65,7 +65,7 @@ class Paytool
                     ->middleware(ValidateSignature::class);
 
                 // 付款確認回戳
-                Route::post('pay-notice', [OrderController::class, 'payNotice'])
+                Route::post('pay-notice/{vendorCode}', [OrderController::class, 'payNotice'])
                     ->name('pay-notice');
 
                 // 付款資訊回戳
@@ -89,7 +89,7 @@ class Paytool
             $params,
             [
                 'driver' => $this->driver::class,
-                'driver_code' => $this->driverCode
+                'vendor_code' => $this->vendorCode
             ]
         );
 

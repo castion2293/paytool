@@ -4,6 +4,7 @@ namespace Pharaoh\Paytool\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Str;
 use Pharaoh\Paytool\Events\PayNoticeEvent;
 use Pharaoh\Paytool\Exceptions\PaytoolException;
 use Pharaoh\Paytool\Http\Requests\OrderCreateRequest;
@@ -22,25 +23,29 @@ class OrderController extends BaseController
         $driver = \App::make($request->input('driver'));
         $viewData = $driver->createOrder($request->all());
 
-        $driverBladeName = str_replace('_', '-', $request->input('driver_code'));
-        $bladeFile = __DIR__ . '/../../Views/' . $driverBladeName . '.blade.php';
+        $vendorBladeName = str_replace('_', '-', $request->input('vendor_code'));
+        $bladeFile = __DIR__ . '/../../Views/' . $vendorBladeName . '.blade.php';
         if (!file_exists($bladeFile)) {
-            throw new PaytoolException("{$driverBladeName}.blade.php is not found");
+            throw new PaytoolException("{$vendorBladeName}.blade.php is not found");
         }
 
-        return view("pharaoh_paytool::{$driverBladeName}", $viewData);
+        return view("pharaoh_paytool::{$vendorBladeName}", $viewData);
     }
 
     /**
      * 付款確認回戳
      *
      * @param Request $request
+     * @param $vendorCode
      * @return string
      */
-    public function payNotice(Request $request): string
+    public function payNotice(Request $request, $vendorCode): string
     {
+        $driver = \App::make('Pharaoh\\Paytool\\Drivers\\' . Str::studly($vendorCode) . 'Driver');
+        $responseData = $driver->handleResponseData($request->all());
+
         // 發送 Pay Notice 事件
-        PayNoticeEvent::dispatch($request->all());
+        PayNoticeEvent::dispatch($responseData);
 
         return '1|OK';
     }

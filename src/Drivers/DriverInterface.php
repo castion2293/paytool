@@ -10,4 +10,12 @@ interface DriverInterface
      * @return mixed
      */
     public function createOrder(array $params);
+
+    /**
+     * 處理付款成功回傳資訊
+     *
+     * @param array $params
+     * @return array
+     */
+    public function handleResponseData(array $params);
 }

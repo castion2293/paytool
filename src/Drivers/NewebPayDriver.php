@@ -9,7 +9,8 @@ class NewebPayDriver extends AbstractDriver
 {
     public function __construct()
     {
-        $this->settings = config('paytool.driver.neweb_pay');
+        $this->vendorCode = 'neweb_pay';
+        $this->settings = config("paytool.driver.{$this->vendorCode}");
     }
 
     /**
@@ -31,7 +32,7 @@ class NewebPayDriver extends AbstractDriver
                 'ItemDesc' => Arr::get($params, 'name'),
                 'Email' => Arr::get($params, 'email'),
                 'LoginType' => Arr::get($this->settings, 'login_type'),
-                'NotifyURL' => config('app.url') . '/paytool/pay-notice',
+                'NotifyURL' => config('app.url') . '/paytool/pay-notice/' . $this->vendorCode,
                 'OrderComment' => Arr::get($params, 'comment')
             ];
 
@@ -52,6 +53,20 @@ class NewebPayDriver extends AbstractDriver
         } catch (\Exception $exception) {
             throw new PaytoolException($exception->getMessage());
         }
+    }
+
+    /**
+     *
+     *
+     * @param array $params
+     * @return array
+     */
+    public function handleResponseData(array $params): array
+    {
+        $tradeInfo = Arr::get($params, 'TradeInfo');
+        $params['decrypt_trade_info'] = json_decode($this->decryptDataForASE($tradeInfo), true);
+
+        return $params;
     }
 
     /**
@@ -134,6 +149,25 @@ class NewebPayDriver extends AbstractDriver
     }
 
     /**
+     * 交易資料 AES 解密
+     *
+     * @param string $aesString
+     * @return bool|string
+     */
+    private function decryptDataForASE(string $aesString): string
+    {
+        return $this->stripPadding(
+            openssl_decrypt(
+                hex2bin($aesString),
+                'AES-256-CBC',
+                $this->settings['hash_key'],
+                OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING,
+                $this->settings['hash_iv']
+            )
+        );
+    }
+
+    /**
      * 交易資料 SHA256 加密
      *
      * @param string $aceString
@@ -164,5 +198,23 @@ class NewebPayDriver extends AbstractDriver
         $pad = $blockSize - ($len % $blockSize);
         $string .= str_repeat(chr($pad), $pad);
         return $string;
+    }
+
+    /**
+     * 解密字串修正
+     *
+     * @param $string
+     * @return bool|string
+     */
+    private function stripPadding($string)
+    {
+        $slast = ord(substr($string, -1));
+        $slastc = chr($slast);
+        if (preg_match("/$slastc{" . $slast . "}/", $string)) {
+            $string = substr($string, 0, strlen($string) - $slast);
+            return $string;
+        } else {
+            return false;
+        }
     }
 }

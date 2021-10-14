@@ -10,4 +10,11 @@ abstract class AbstractDriver implements DriverInterface
      * @var array
      */
     protected $settings = [];
+
+    /**
+     * 支付工具代碼
+     *
+     * @var string
+     */
+    protected $vendorCode = '';
 }
