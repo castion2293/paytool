@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/castion2293/paytool/compare/v1.0.3...v1.0.4) (2021-10-15)
+
+
+### Bug Fixes
+
+* 新增ReadMe([@nick](https://github.com/nick)) ([6a643a1](https://github.com/castion2293/paytool/commit/6a643a1ccabccfee3d2d49432adcdd58d8ddf28a))
+
 ### [1.0.3](https://github.com/castion2293/paytool/compare/v1.0.2...v1.0.3) (2021-10-14)
 
 
