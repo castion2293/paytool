@@ -59,7 +59,125 @@ Paytool::vendor($vendor)->createOrderTempUrl($params);
 
 #### 各家金流支費相關資料
 - 綠界
+    ##### 信用卡
+  | 欄位 | 說明 | 類型 | 範例 |
+  | ------------|:----------------------- | :------| :------|
+  | merchant_trade_no | 自訂交易流水號 | string | ab12345678 |
+  | total_amount | 總金額 | int | 1000 |
+  | trade_desc | 交易描述 | string | 一瓶 |
+  | choose_payment | 付款類別 | string | Credit |
+  | name | 商品名稱 | string | 黑芝麻豆漿 |
+  | price | 單價 | string | 1000 |
+  | currency | 幣別名稱 | string | 元 |
+  | quantity | 數量 | string | 1 |
 
+    ##### 網路ATM
+  | 欄位 | 說明 | 類型 | 範例 |
+  | ------------|:----------------------- | :------| :------|
+  | merchant_trade_no | 自訂交易流水號 | string | ab12345678 |
+  | total_amount | 總金額 | int | 1000 |
+  | trade_desc | 交易描述 | string | 一瓶 |
+  | choose_payment | 付款類別 | string | WebATM |
+  | name | 商品名稱 | string | 黑芝麻豆漿 |
+  | price | 單價 | string | 1000 |
+  | currency | 幣別名稱 | string | 元 |
+  | quantity | 數量 | string | 1 |
+
+    ##### 自動櫃員機
+  | 欄位 | 說明 | 類型 | 範例 |
+  | ------------|:----------------------- | :------| :------|
+  | merchant_trade_no | 自訂交易流水號 | string | ab12345678 |
+  | total_amount | 總金額 | int | 1000 |
+  | trade_desc | 交易描述 | string | 一瓶 |
+  | choose_payment | 付款類別 | string | ATM |
+  | name | 商品名稱 | string | 黑芝麻豆漿 |
+  | price | 單價 | string | 1000 |
+  | currency | 幣別名稱 | string | 元 |
+  | quantity | 數量 | string | 1 |
+
+    ##### 超商代碼
+  | 欄位 | 說明 | 類型 | 範例 |
+  | ------------|:----------------------- | :------| :------|
+  | merchant_trade_no | 自訂交易流水號 | string | ab12345678 |
+  | total_amount | 總金額 | int | 1000 |
+  | trade_desc | 交易描述 | string | 一瓶 |
+  | choose_payment | 付款類別 | string | CVS |
+  | name | 商品名稱 | string | 黑芝麻豆漿 |
+  | price | 單價 | string | 1000 |
+  | currency | 幣別名稱 | string | 元 |
+  | quantity | 數量 | string | 1 |
+  | desc_1 | 描述1 | string | |
+  | desc_2 | 描述2 | string | |
+  | desc_3 | 描述3 | string | |
+  | desc_4 | 描述4 | string | |
+
+    ##### 超商條碼
+  | 欄位 | 說明 | 類型 | 範例 |
+  | ------------|:----------------------- | :------| :------|
+  | merchant_trade_no | 自訂交易流水號 | string | ab12345678 |
+  | total_amount | 總金額 | int | 1000 |
+  | trade_desc | 交易描述 | string | 一瓶 |
+  | choose_payment | 付款類別 | string | BARCODE |
+  | name | 商品名稱 | string | 黑芝麻豆漿 |
+  | price | 單價 | string | 1000 |
+  | currency | 幣別名稱 | string | 元 |
+  | quantity | 數量 | string | 1 |
+  | desc_1 | 描述1 | string | |
+  | desc_2 | 描述2 | string | |
+  | desc_3 | 描述3 | string | |
+  | desc_4 | 描述4 | string | |
+  
+- 藍新
+  ##### 信用卡
+  | 欄位 | 說明 | 類型 | 範例 |
+  | ------------|:----------------------- | :------| :------|
+  | merchant_trade_no | 自訂交易流水號 | string | ab12345678 |
+  | total_amount | 總金額 | int | 1000 |
+  | trade_desc | 交易描述 | string | 一瓶 |
+  | choose_payment | 付款類別 | string | Credit |
+  | name | 商品名稱 | string | 黑芝麻豆漿 |
+  | email | 電子郵件 | string | my@example.com |
+
+  ##### 網路ATM
+  | 欄位 | 說明 | 類型 | 範例 |
+  | ------------|:----------------------- | :------| :------|
+  | merchant_trade_no | 自訂交易流水號 | string | ab12345678 |
+  | total_amount | 總金額 | int | 1000 |
+  | trade_desc | 交易描述 | string | 一瓶 |
+  | choose_payment | 付款類別 | string | WebATM |
+  | name | 商品名稱 | string | 黑芝麻豆漿 |
+  | email | 電子郵件 | string | my@example.com |
+
+  ##### 自動櫃員機
+  | 欄位 | 說明 | 類型 | 範例 |
+  | ------------|:----------------------- | :------| :------|
+  | merchant_trade_no | 自訂交易流水號 | string | ab12345678 |
+  | total_amount | 總金額 | int | 1000 |
+  | trade_desc | 交易描述 | string | 一瓶 |
+  | choose_payment | 付款類別 | string | ATM |
+  | name | 商品名稱 | string | 黑芝麻豆漿 |
+  | email | 電子郵件 | string | my@example.com |
+  
+  ##### 超商代碼
+  | 欄位 | 說明 | 類型 | 範例 |
+  | ------------|:----------------------- | :------| :------|
+  | merchant_trade_no | 自訂交易流水號 | string | ab12345678 |
+  | total_amount | 總金額 | int | 1000 |
+  | trade_desc | 交易描述 | string | 一瓶 |
+  | choose_payment | 付款類別 | string | CVS |
+  | name | 商品名稱 | string | 黑芝麻豆漿 |
+  | email | 電子郵件 | string | my@example.com |
+
+  ##### 超商條碼
+  | 欄位 | 說明 | 類型 | 範例 |
+  | ------------|:----------------------- | :------| :------|
+  | merchant_trade_no | 自訂交易流水號 | string | ab12345678 |
+  | total_amount | 總金額 | int | 1000 |
+  | trade_desc | 交易描述 | string | 一瓶 |
+  | choose_payment | 付款類別 | string | BARCODE |
+  | name | 商品名稱 | string | 黑芝麻豆漿 |
+  | email | 電子郵件 | string | my@example.com |
+    
 
 ### 付款確認回戳
 ```bash

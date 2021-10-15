@@ -33,7 +33,7 @@ class NewebPayDriver extends AbstractDriver
                 'Email' => Arr::get($params, 'email'),
                 'LoginType' => Arr::get($this->settings, 'login_type'),
                 'NotifyURL' => config('app.url') . '/paytool/pay-notice/' . $this->vendorCode,
-                'OrderComment' => Arr::get($params, 'comment')
+                'OrderComment' => Arr::get($params, 'trade_desc')
             ];
 
             $choosePayment = Arr::get($params, 'choose_payment');
