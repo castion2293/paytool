@@ -7,14 +7,13 @@ namespace Pharaoh\Paytool\Sdk\EcPay;
  */
 abstract class ECPay_DeviceType
 {
-
     /**
      * 桌機版付費頁面。
      */
-    const PC = 'P';
+    public const PC = 'P';
 
     /**
      * 行動裝置版付費頁面。
      */
-    const Mobile = 'M';
+    public const Mobile = 'M';
 }

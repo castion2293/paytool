@@ -8,8 +8,8 @@ namespace Pharaoh\Paytool\Sdk\EcPay;
 abstract class ECPay_InvType
 {
     // 一般稅額
-    const General = '07';
+    public const General = '07';
 
     // 特種稅額
-    const Special = '08';
+    public const Special = '08';
 }

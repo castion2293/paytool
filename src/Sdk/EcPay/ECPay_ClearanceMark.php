@@ -8,8 +8,8 @@ namespace Pharaoh\Paytool\Sdk\EcPay;
 abstract class ECPay_ClearanceMark
 {
     // 經海關出口
-    const Yes = '1';
+    public const Yes = '1';
 
     // 非經海關出口
-    const No = '2';
+    public const No = '2';
 }

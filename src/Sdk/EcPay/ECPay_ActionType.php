@@ -7,24 +7,23 @@ namespace Pharaoh\Paytool\Sdk\EcPay;
  */
 abstract class ECPay_ActionType
 {
-
     /**
      * 關帳
      */
-    const C = 'C';
+    public const C = 'C';
 
     /**
      * 退刷
      */
-    const R = 'R';
+    public const R = 'R';
 
     /**
      * 取消
      */
-    const E = 'E';
+    public const E = 'E';
 
     /**
      * 放棄
      */
-    const N = 'N';
+    public const N = 'N';
 }

@@ -8,14 +8,14 @@ namespace Pharaoh\Paytool\Sdk\EcPay;
 abstract class ECPay_TaxType
 {
     // 應稅
-    const Dutiable = '1';
+    public const Dutiable = '1';
 
     // 零稅率
-    const Zero = '2';
+    public const Zero = '2';
 
     // 免稅
-    const Free = '3';
+    public const Free = '3';
 
     // 應稅與免稅混合(限收銀機發票無法分辦時使用，且需通過申請核可)
-    const Mix = '9';
+    public const Mix = '9';
 }

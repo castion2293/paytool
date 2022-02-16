@@ -8,8 +8,8 @@ namespace Pharaoh\Paytool\Sdk\EcPay;
 abstract class ECPay_PrintMark
 {
     // 不列印
-    const No = '0';
+    public const No = '0';
 
     // 列印
-    const Yes = '1';
+    public const Yes = '1';
 }

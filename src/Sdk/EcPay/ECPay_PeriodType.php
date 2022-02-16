@@ -7,24 +7,23 @@ namespace Pharaoh\Paytool\Sdk\EcPay;
  */
 abstract class ECPay_PeriodType
 {
-
     /**
      * 無
      */
-    const None = '';
+    public const None = '';
 
     /**
      * 年
      */
-    const Year = 'Y';
+    public const Year = 'Y';
 
     /**
      * 月
      */
-    const Month = 'M';
+    public const Month = 'M';
 
     /**
      * 日
      */
-    const Day = 'D';
+    public const Day = 'D';
 }

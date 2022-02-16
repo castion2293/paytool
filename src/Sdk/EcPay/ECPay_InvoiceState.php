@@ -10,10 +10,10 @@ abstract class ECPay_InvoiceState
     /**
      * 需要開立電子發票。
      */
-    const Yes = 'Y';
+    public const Yes = 'Y';
 
     /**
      * 不需要開立電子發票。
      */
-    const No = '';
+    public const No = '';
 }

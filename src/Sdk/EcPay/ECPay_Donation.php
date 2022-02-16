@@ -8,8 +8,8 @@ namespace Pharaoh\Paytool\Sdk\EcPay;
 abstract class ECPay_Donation
 {
     // 捐贈
-    const Yes = '1';
+    public const Yes = '1';
 
     // 不捐贈
-    const No = '2';
+    public const No = '2';
 }

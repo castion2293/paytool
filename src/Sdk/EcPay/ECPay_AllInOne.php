@@ -18,11 +18,10 @@ namespace Pharaoh\Paytool\Sdk\EcPay;
  */
 class ECPay_AllInOne
 {
-
     /**
      * @ SDK版本
      */
-    const VERSION = '1.1.1910310';
+    public const VERSION = '1.1.1910310';
 
     public $ServiceURL = 'ServiceURL';
     public $ServiceMethod = 'ServiceMethod';
