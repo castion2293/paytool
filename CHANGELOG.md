@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/castion2293/paytool/compare/v1.0.4...v2.0.0) (2022-02-16)
+
+
+### Features
+
+* 升級至laravel9([@nick](https://github.com/nick)) ([fbf6c06](https://github.com/castion2293/paytool/commit/fbf6c069e0b19e0f14929987b05f14c9686024d1))
+
 ### [1.0.4](https://github.com/castion2293/paytool/compare/v1.0.3...v1.0.4) (2021-10-15)
 
 
