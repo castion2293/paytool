@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/castion2293/paytool/compare/v2.0.0...v2.0.1) (2023-02-24)
+
+
+### Bug Fixes
+
+* remove laravel version constrain(@Zhang) ([170004f](https://github.com/castion2293/paytool/commit/170004ffd89e6385ef70fe4723fad114937f7d87))
+
 ## [2.0.0](https://github.com/castion2293/paytool/compare/v1.0.4...v2.0.0) (2022-02-16)
 
 
